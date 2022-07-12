@@ -1,7 +1,5 @@
-require 'bundler'
-Bundler.require
+# Load the Rails application.
+require_relative 'application'
 
-ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'db/development.db')
-require_all 'lib'
-
-ActiveRecord::Base.logger = nil
+# Initialize the Rails application.
+Rails.application.initialize!
