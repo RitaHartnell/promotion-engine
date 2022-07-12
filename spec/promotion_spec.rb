@@ -1,4 +1,4 @@
-require 'promotion'
+require 'Promotion'
 
 RSpec.describe Promotion, "#qualifying_amount" do
     context "with no given" do
@@ -8,3 +8,16 @@ RSpec.describe Promotion, "#qualifying_amount" do
         end
     end
 end 
+
+RSpec.describe Promotion, "#add_product" do
+    context "not combo promotion" do
+        #TODO - implement product
+        it "successfully adds a product" do
+            product = "cheese"
+            promo = Promotion.new(false, true, 2, 15)
+            promo.add_product(product)
+            expect(promo.products[0]).to eq("cheese")
+        end
+
+    end
+end

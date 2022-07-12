@@ -5,6 +5,11 @@ class Promotion
         @needs_qualifying_amount = needs_qualifying_amount
         @price = price
     end
+
+    def add_product(product)
+        @products << product
+    end
+
     def qualifying_amount
         @qualifying_amount
     end
