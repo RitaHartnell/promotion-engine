@@ -4,10 +4,15 @@ class Promotion
         @qualifying_amount = qualifying_amount
         @needs_qualifying_amount = needs_qualifying_amount
         @price = price
+        @products = Array.new
     end
 
     def add_product(product)
         @products << product
+    end
+
+    def products
+        @products
     end
 
     def qualifying_amount
