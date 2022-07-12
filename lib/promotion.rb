@@ -8,7 +8,15 @@ class Promotion
     end
 
     def add_product(product)
-        @products << product
+        if (!@is_combo)
+            if (@products.length() == 1)
+                print "cannot add 2nd product to non combo promotion"
+            else
+                @products << product
+            end
+        else   
+            @products << product
+        end
     end
 
     def products
