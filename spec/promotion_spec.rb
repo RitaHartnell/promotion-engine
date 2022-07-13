@@ -18,7 +18,7 @@ RSpec.describe Promotion, "#add_product" do
     end
     context " when not combo promotion" do
         #TODO - implement product
-        #TODO - implement check for product existing in non combo promo - DONE
+        #TODO - implement check fr product existing in non combo promo - DONE
         it "checks if there is already a product and returns an error message if so" do
             product1 = "cheese"
             product2 = "milk"
@@ -38,3 +38,4 @@ RSpec.describe Promotion, "#add_product" do
         end
     end
 end
+
