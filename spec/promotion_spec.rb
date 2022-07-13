@@ -11,13 +11,13 @@ end
 
 RSpec.describe Promotion, "#add_product" do
     it "successfully adds a product" do
-        product = "cheese"
-        promo = Promotion.new(false, true, 2, 15)
+        product = Product.new("cheese", 5)
+        promo = Promotion.new(false, true, 2, 8)
         promo.add_product(product)
-        expect(promo.products[0]).to eq("cheese")
+        expect(promo.products[0].name).to eq("cheese")
     end
     context " when not combo promotion" do
-        #TODO - implement product
+        #TODO - implement product - DONE
         #TODO - implement check fr product existing in non combo promo - DONE
         it "checks if there is already a product and returns an error message if so" do
             product1 = "cheese"

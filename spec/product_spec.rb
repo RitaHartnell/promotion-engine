@@ -16,3 +16,18 @@ RSpec.describe Product, "#initialize" do
         expect(product.price).to eq(10)
     end
 end
+
+RSpec.describe Product, "#add_promo" do
+    context "adding a new combo promotion" do
+        it "is able to create 1 new promotion for both products" do
+            product1 = Product.new("parmesean", 10)
+            product2 = Product.new("Peccerino Romano", 15)
+            product1.add_promo(product2, 20)
+            expect(product1.promotions.empty?).not_to eq(true)
+        end
+    end
+
+    #context "adding a new single promotion" do
+    #
+    #end
+end
