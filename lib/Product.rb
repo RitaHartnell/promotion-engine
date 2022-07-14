@@ -31,6 +31,10 @@ class Product
                 second.add_promo_helper(promo)
             when false
                 #single product promotion
+                price = args[1]
+                qualifying_amount = args[0]
+                promo = Promotion.new(false, true, qualifying_amount, price)
+                self.add_promo_helper(promo)
         end
     end
 

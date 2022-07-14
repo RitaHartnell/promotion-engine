@@ -29,6 +29,9 @@ RSpec.describe Product, "#add_promo" do
 
     context "adding a new single promotion" do
         it "is able to create a new promotion for the product" do
+            product = Product.new("parmesean", 10)
+            product.add_promo(2, 18)
+            expect(product.promotions.empty?).not_to eq(true)
         end
     end
 end
