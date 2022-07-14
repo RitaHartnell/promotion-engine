@@ -28,6 +28,13 @@ class Promotion
     end
 
     def qualifies?(cart)
-        
+        if (!@is_combo)
+            if (cart.products[@products[0]] >= @qualifying_amount)
+                return true
+            else
+                return false
+            end
+        else
+        end
     end
 end

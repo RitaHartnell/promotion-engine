@@ -4,7 +4,7 @@ class Cart
     end
 
     def add_to_cart(product, quantity)
-        @products[product.name] = quantity
+        @products[product] = quantity
     end
 
     def products
