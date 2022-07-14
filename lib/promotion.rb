@@ -26,4 +26,8 @@ class Promotion
     def qualifying_amount
         @qualifying_amount
     end
+
+    def qualifies?(cart)
+        
+    end
 end

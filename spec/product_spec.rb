@@ -32,3 +32,4 @@ RSpec.describe Product, "#add_promo" do
         end
     end
 end
+
