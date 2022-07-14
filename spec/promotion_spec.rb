@@ -43,13 +43,27 @@ RSpec.describe Promotion, "#qualifies?" do
     #TODO - implement cart - DONE
     #TODO - implement product - DONE
     context "when not combo promo" do
-        it "checks cart for correct quantity and returns false is less than the amount" do
+        it "checks cart for correct quantity and returns false if less than the amount" do
             product = Product.new("cheese", 5)
             cart = Cart.new()
             cart.add_to_cart(product, 1)
             promo = Promotion.new(false, true, 2, 8)
             promo.add_product(product)
             expect(promo.qualifies?(cart)).to eq(false)
+        end
+    end
+
+    context "when is combo promo" do
+        it "checks cart to make sure both items are present and returns true if so" do
+            product1 = Product.new("cheese", 5)
+            product2 = Product.new("milk", 3)
+            promo = Promotion.new(true, false, 6)
+            cart = Cart.new()
+            cart.add_to_cart(product1, 1)
+            cart.add_to_cart(product2, 1)
+            promo.add_product(product1)
+            promo.add_product(product2)
+            expect(promo.qualifies?(cart)).to eq(true)
         end
     end
 end
