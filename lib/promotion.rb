@@ -10,7 +10,7 @@ class Promotion
     def add_product(product)
         if (!@is_combo)
             if (@products.length() == 1)
-                print "cannot add 2nd product to non combo promotion"
+                raise "cannot add 2nd product to non combo promotion"
             else
                 @products << product
             end

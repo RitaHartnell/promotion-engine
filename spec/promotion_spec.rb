@@ -20,21 +20,21 @@ RSpec.describe Promotion, "#add_product" do
         #TODO - implement product - DONE
         #TODO - implement check fr product existing in non combo promo - DONE
         it "checks if there is already a product and returns an error message if so" do
-            product1 = "cheese"
-            product2 = "milk"
+            product1 = Product.new("cheese", 5)
+            product2 = Product.new("milk", 3)
             promo = Promotion.new(false, true, 2, 15)
             promo.add_product(product1)
-            expect{promo.add_product(product2)} .to output("cannot add 2nd product to non combo promotion").to_stdout
+            expect{promo.add_product(product2)} .to raise_error("cannot add 2nd product to non combo promotion")
         end
     end
     context " when is combo promo" do
         it "can add second product to the list" do
-            product1 = "cheese"
-            product2 = "milk"
-            promo = Promotion.new(true, false, 30)
+            product1 = Product.new("cheese", 5)
+            product2 = Product.new("milk", 3)
+            promo = Promotion.new(true, false, 6)
             promo.add_product(product1)
             promo.add_product(product2)
-            expect(promo.products[1]).to eq("milk")
+            expect(promo.products[1].name).to eq("milk")
         end
     end
 end

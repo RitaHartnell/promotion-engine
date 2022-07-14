@@ -27,7 +27,8 @@ RSpec.describe Product, "#add_promo" do
         end
     end
 
-    #context "adding a new single promotion" do
-    #
-    #end
+    context "adding a new single promotion" do
+        it "is able to create a new promotion for the product" do
+        end
+    end
 end
