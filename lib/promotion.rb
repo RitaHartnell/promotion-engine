@@ -35,6 +35,11 @@ class Promotion
                 return false
             end
         else
+            if (cart.products[@products[0]] > 0 && cart.products[@products[1]] > 0)
+                return true
+            else
+                return false
+            end
         end
     end
 end
